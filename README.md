@@ -2,15 +2,6 @@
 
 A bright, point-only radial starfield shader for [Ghostty](https://ghostty.org/). Stars spawn throughout a circular zone, accelerate toward the viewer, and respawn at randomized positions.
 
-The effect is intentionally restrained:
-
-- crisp star points
-- no trails or streaks
-- no glow
-- no twinkling
-- randomized respawns instead of a single center point
-- dark-pixel masking to keep terminal text readable
-
 It works in any Ghostty terminal and includes an optional configuration adjustment for [Herdr](https://herdr.dev/).
 
 ![Warp Stars running in Ghostty](assets/demo.gif)
@@ -19,35 +10,8 @@ It works in any Ghostty terminal and includes an optional configuration adjustme
 
 - Ghostty with custom-shader support
 - A dark terminal theme is strongly recommended
-- macOS or Linux
 
 This shader uses Ghostty's `iTime`, `iResolution`, and `iChannel0` shader inputs. Animation must remain enabled for continuous motion.
-
-## Quick install
-
-Clone or copy this folder onto the target machine, then run:
-
-```sh
-./install.sh
-```
-
-The installer:
-
-1. copies `shaders/warp-stars.glsl` into your Ghostty shader directory;
-2. backs up your Ghostty configuration before changing it;
-3. adds the shader and enables continuous shader animation;
-4. runs `ghostty +validate-config` when Ghostty is available in `PATH`.
-
-Reload Ghostty afterward:
-
-- **macOS:** `Cmd+Shift+,`
-- **Linux:** `Ctrl+Shift+,`
-
-To remove the installed shader and the configuration block added by the installer:
-
-```sh
-./install.sh --uninstall
-```
 
 ## Manual installation
 
@@ -70,6 +34,11 @@ Use the real absolute path for your machine. Validate the result:
 ```sh
 ghostty +validate-config
 ```
+
+Reload Ghostty:
+
+- **macOS:** `Cmd+Shift+,`
+- **Linux:** `Ctrl+Shift+,`
 
 ### Combining it with another shader
 
@@ -140,7 +109,6 @@ ghostty-warp-stars/
 ├── shaders/
 │   └── warp-stars.glsl
 ├── CONTRIBUTING.md
-├── install.sh
 ├── LICENSE
 └── README.md
 ```

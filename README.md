@@ -13,7 +13,7 @@ The effect is intentionally restrained:
 
 It works in any Ghostty terminal and includes an optional configuration adjustment for [Herdr](https://herdr.dev/).
 
-![Warp Stars running in Ghostty](docs/demo.gif)
+![Warp Stars running in Ghostty](assets/demo.gif)
 
 ## Requirements
 
@@ -115,14 +115,6 @@ The main controls are at the top of `shaders/warp-stars.glsl`:
 
 After changing the shader, reload Ghostty. Recent Ghostty versions can hot-reload custom shader changes.
 
-### Performance
-
-With `custom-shader-animation = always`, Ghostty continuously renders animated frames, normally synchronized to the active display. Movement is based on `iTime`, so animation speed does not depend on display refresh rate.
-
-An isolated Apple M4 benchmark measured approximately 5.17% of one CPU core and 306.9 MiB physical memory for a 2496×1283 Warp Stars terminal, compared with 1.12% CPU and 207.4 MiB for an unshaded baseline. Per-process GPU attribution was unavailable on the test system, so no system-wide GPU number is presented as a substitute.
-
-See [the full methodology and results](docs/performance.md).
-
 ## How the effect works
 
 Each star has a deterministic pseudo-random lifecycle:
@@ -140,9 +132,8 @@ No previous star position is sampled, which is why the effect produces no tail.
 
 ```text
 ghostty-warp-stars/
-├── docs/
-│   ├── demo.gif
-│   └── performance.md
+├── assets/
+│   └── demo.gif
 ├── examples/
 │   ├── ghostty.conf
 │   └── herdr.toml

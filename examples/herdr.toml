@@ -1,0 +1,3 @@
+# Merge this token into an existing [theme.custom] table if you have one.
+[theme.custom]
+panel_bg = "reset"

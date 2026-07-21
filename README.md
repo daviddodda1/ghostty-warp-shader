@@ -13,7 +13,7 @@ It works in any Ghostty terminal and includes an optional configuration adjustme
 
 This shader uses Ghostty's `iTime`, `iResolution`, and `iChannel0` shader inputs. Animation must remain enabled for continuous motion.
 
-## Manual installation
+## installation
 
 Copy the shader:
 
@@ -72,15 +72,15 @@ herdr server reload-config
 
 The main controls are at the top of `shaders/warp-stars.glsl`:
 
-| Constant | Default | Purpose |
-| --- | ---: | --- |
-| `WARP_SPEED` | `0.060` | Lifecycle and movement speed |
-| `SPAWN_RADIUS` | `0.22` | Size of the randomized circular spawn zone |
-| `STAR_BRIGHTNESS` | `1.38` | Overall additive brightness |
-| `STAR_COUNT` | `44` | Number of simulated stars |
-| `STAR_COLOR` | `(0.96, 0.98, 1.00)` | Blue-white point color |
-| `BACKGROUND_LUMA_START` | `0.11` | Luminance where background masking starts |
-| `BACKGROUND_LUMA_END` | `0.25` | Luminance above which pixels are protected |
+| Constant                |              Default | Purpose                                    |
+| ----------------------- | -------------------: | ------------------------------------------ |
+| `WARP_SPEED`            |              `0.060` | Lifecycle and movement speed               |
+| `SPAWN_RADIUS`          |               `0.22` | Size of the randomized circular spawn zone |
+| `STAR_BRIGHTNESS`       |               `1.38` | Overall additive brightness                |
+| `STAR_COUNT`            |                 `44` | Number of simulated stars                  |
+| `STAR_COLOR`            | `(0.96, 0.98, 1.00)` | Blue-white point color                     |
+| `BACKGROUND_LUMA_START` |               `0.11` | Luminance where background masking starts  |
+| `BACKGROUND_LUMA_END`   |               `0.25` | Luminance above which pixels are protected |
 
 After changing the shader, reload Ghostty. Recent Ghostty versions can hot-reload custom shader changes.
 
